@@ -24,7 +24,7 @@ public class DiningHoursActivity extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         int date = c.get(Calendar.DATE);
 
-        DateFormat df = new SimpleDateFormat("MM/dd/yy");
+        DateFormat df = new SimpleDateFormat("EEEE, MMM dd");
         String now = df.format(new Date());
 
         dateTextView.setText(now);

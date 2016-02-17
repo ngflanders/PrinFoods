@@ -17,15 +17,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//        diningButton = (ImageButton) findViewById(R.id.diningButton);
-//        diningButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(this, DiningHoursActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+
 
         pubButton = (ImageButton) findViewById(R.id.pubButton);
         pubButton.setOnClickListener(new View.OnClickListener() {
@@ -42,5 +34,6 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DiningHoursActivity.class);
         startActivity(intent);
     }
+
 
 }
