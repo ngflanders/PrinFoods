@@ -1,7 +1,7 @@
 package com.ngflanders.android.prinfoods;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -21,7 +21,7 @@ public class DiningHoursActivity extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         int date = c.get(Calendar.DATE);
 
-        dateTextView.setText(date);
+        dateTextView.setText(String.valueOf(date));
 
 
     }

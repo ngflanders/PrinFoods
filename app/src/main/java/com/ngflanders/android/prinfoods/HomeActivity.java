@@ -1,8 +1,8 @@
 package com.ngflanders.android.prinfoods;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -17,15 +17,15 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        diningButton = (ImageButton) findViewById(R.id.diningButton);
-        diningButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DiningHoursActivity.class);
-                startActivity(intent);
-
-            }
-        });
+//        diningButton = (ImageButton) findViewById(R.id.diningButton);
+//        diningButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(this, DiningHoursActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
         pubButton = (ImageButton) findViewById(R.id.pubButton);
         pubButton.setOnClickListener(new View.OnClickListener() {
@@ -38,5 +38,9 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    public void launchDiningActivity(View view) {
+        Intent intent = new Intent(this, DiningHoursActivity.class);
+        startActivity(intent);
+    }
 
 }
