@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ImageButton diningButton;
-    private ImageButton pubButton;
+    private Button diningButton;
+    private Button pubButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-
-        pubButton = (ImageButton) findViewById(R.id.pubButton);
+        pubButton = (Button) findViewById(R.id.pubButton);
         pubButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

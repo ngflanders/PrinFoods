@@ -14,7 +14,6 @@
     <Button
         android:id="@+id/diningButton"
         android:text="@string/dining_room"
-        android:typeface="serif"
         android:textColor="@android:color/white"
         android:textSize="30dp"
         android:layout_width="0dp"
@@ -27,7 +26,6 @@
     <Button
         android:id="@+id/pubButton"
         android:text="@string/pub"
-        android:typeface="serif"
         android:textColor="@android:color/white"
         android:textSize="30dp"
         android:layout_width="0dp"
