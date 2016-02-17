@@ -20,7 +20,6 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Switch"
             android:id="@+id/dateSwitch"
             android:thumb="@drawable/custom_date_switch_selector"
             android:track="@drawable/custom_date_switch_track"
@@ -44,7 +43,7 @@
         android:orientation="vertical">
 
         <Button
-            android:text="Breakfast&#10;Times"
+            android:text="Breakfast&#10;'Times'"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -52,6 +51,7 @@
             android:layout_gravity="center_horizontal" />
 
         <Button
+            android:text="Lunch&#10;'Times'"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -59,6 +59,7 @@
             android:layout_gravity="center_horizontal" />
 
         <Button
+            android:text="Dinner&#10;'Times'"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

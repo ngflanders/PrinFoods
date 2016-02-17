@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class DiningHoursActivity extends AppCompatActivity {
 
@@ -21,7 +24,10 @@ public class DiningHoursActivity extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         int date = c.get(Calendar.DATE);
 
-        dateTextView.setText(String.valueOf(date));
+        DateFormat df = new SimpleDateFormat("MM/dd/yy");
+        String now = df.format(new Date());
+
+        dateTextView.setText(now);
 
 
     }
