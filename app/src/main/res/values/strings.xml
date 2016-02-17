@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PrinFoods</string>
+    <string name="dining_room">Dining Room</string>
+    <string name="pub">Pub</string>
 </resources>

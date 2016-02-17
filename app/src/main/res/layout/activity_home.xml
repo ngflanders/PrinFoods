@@ -11,20 +11,29 @@
     android:orientation="horizontal"
     tools:context="com.ngflanders.android.prinfoods.HomeActivity">
 
-    <ImageButton
+    <Button
         android:id="@+id/diningButton"
+        android:text="@string/dining_room"
+        android:typeface="serif"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/dining_room"
+        android:background="@drawable/dining_room"
         android:onClick="launchDiningActivity"
         />
-    <ImageButton
+
+    <Button
         android:id="@+id/pubButton"
+        android:text="@string/pub"
+        android:typeface="serif"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/pub"
+        android:background="@drawable/pub"
         />
 
 
