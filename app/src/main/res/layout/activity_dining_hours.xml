@@ -50,7 +50,8 @@
             android:layout_weight="1"
             android:id="@+id/BreakfastButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
             android:layout_gravity="center_horizontal"
             android:onClick="onButtonClick" />
 
@@ -61,7 +62,8 @@
             android:layout_weight="1"
             android:id="@+id/LunchButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
             android:layout_gravity="center_horizontal"
             android:onClick="onButtonClick" />
 
@@ -72,7 +74,8 @@
             android:layout_weight="1"
             android:id="@+id/DinnerButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
             android:layout_gravity="center_horizontal"
             android:onClick="onButtonClick" />
 
