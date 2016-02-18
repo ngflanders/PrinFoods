@@ -24,7 +24,6 @@
             android:id="@+id/dateSwitch"
             android:thumb="@drawable/custom_date_switch_selector"
             android:track="@drawable/custom_date_switch_track"
-
             android:layout_gravity="center_horizontal" />
 
         <TextView
