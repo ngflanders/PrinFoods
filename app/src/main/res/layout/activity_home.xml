@@ -14,7 +14,7 @@
     <Button
         android:id="@+id/diningButton"
         android:text="@string/dining_room"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="30dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -26,7 +26,7 @@
     <Button
         android:id="@+id/pubButton"
         android:text="@string/pub"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="30dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"

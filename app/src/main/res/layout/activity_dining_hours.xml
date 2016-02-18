@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:id="@+id/imageButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal" />
 
         <Button
@@ -60,7 +60,7 @@
             android:layout_weight="1"
             android:id="@+id/imageButton2"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal" />
 
         <Button
@@ -70,7 +70,7 @@
             android:layout_weight="1"
             android:id="@+id/imageButton3"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
