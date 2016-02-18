@@ -48,16 +48,14 @@ public class DiningMenuActivity extends AppCompatActivity {
     private void updateMenu() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Menu"); // gets Menu table
 
-        // qualifies query for meal type and date
-        query.whereEqualTo("meal", meal);
+        // qualifies query for date and meal type
         query.whereEqualTo("date", date);
+        query.whereEqualTo("meal", meal);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-
                 if (e == null) {
-
                     for (ParseObject item : objects) {
                         String s = item.getString("dish");
                         menu.add(s);

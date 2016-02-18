@@ -97,9 +97,7 @@ public class DiningHoursActivity extends AppCompatActivity {
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-
                 if (e == null) {
-
                     for (ParseObject item : objects) {
 
                     }
