@@ -46,11 +46,8 @@ public class DiningMenuActivity extends AppCompatActivity {
     }
 
     private void updateMenu() {
-
-        Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Menu");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Menu"); //Gets menu table
         query.whereEqualTo("meal", meal);
-        Toast.makeText(this, date, Toast.LENGTH_SHORT);
         query.whereEqualTo("date", date);
 
         query.findInBackground(new FindCallback<ParseObject>() {

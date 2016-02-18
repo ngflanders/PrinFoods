@@ -97,7 +97,6 @@ public class DiningHoursActivity extends AppCompatActivity {
         query.whereEqualTo("dayOfWeek", "Thursday");
 
         query.findInBackground(new FindCallback<ParseObject>() {
-
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
 
