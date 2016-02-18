@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -92,6 +93,7 @@ public class DiningHoursActivity extends AppCompatActivity {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("MealTimes");
         //query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_d : tom_d);
+
         query.whereEqualTo("dayOfWeek", "Thursday");
 
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -99,7 +101,7 @@ public class DiningHoursActivity extends AppCompatActivity {
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {
                     for (ParseObject item : objects) {
-
+                        Toast.makeText(getApplicationContext(), item.getString("time"), Toast.LENGTH_LONG).show();
                     }
 
                 } else {
