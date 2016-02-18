@@ -46,16 +46,18 @@ public class DiningMenuActivity extends AppCompatActivity {
     }
 
     private void updateMenu() {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Menu"); //Gets menu table
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Menu"); // gets Menu table
+
+        // qualifies query for meal type and date
         query.whereEqualTo("meal", meal);
         query.whereEqualTo("date", date);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
+
                 if (e == null) {
-                    //objects.clear();
+
                     for (ParseObject item : objects) {
                         String s = item.getString("dish");
                         menu.add(s);
@@ -63,7 +65,6 @@ public class DiningMenuActivity extends AppCompatActivity {
                     ((ArrayAdapter<String>) listView.getAdapter()).notifyDataSetChanged();
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
-                    Toast.makeText(getApplicationContext(), "1000", Toast.LENGTH_LONG).show();
                 }
             }
         });
