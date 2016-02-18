@@ -31,10 +31,9 @@ public class DiningMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dining_menu);
 
         menu = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.menu_item, menu);
 
         listView = (ListView) findViewById(R.id.menu_list);
-        listView.setAdapter(adapter);
+        listView.setAdapter(new ArrayAdapter<>(this, R.layout.menu_item, menu));
 
         Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
 
@@ -68,5 +67,4 @@ public class DiningMenuActivity extends AppCompatActivity {
         });
 
     }
-
 }
