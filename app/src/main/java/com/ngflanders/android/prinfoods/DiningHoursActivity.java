@@ -19,6 +19,9 @@ public class DiningHoursActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /**
+         * This is just a test.
+         */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining_hours);
 
