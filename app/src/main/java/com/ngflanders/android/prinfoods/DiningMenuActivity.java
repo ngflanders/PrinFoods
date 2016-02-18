@@ -49,7 +49,6 @@ public class DiningMenuActivity extends AppCompatActivity {
                 if (e == null) {
                     //objects.clear();
                     for (ParseObject item : objects) {
-                        Toast.makeText(getApplicationContext(), "4", Toast.LENGTH_SHORT).show();
                         String s = item.getString("dish");
                         menu.add(s);
                     }
