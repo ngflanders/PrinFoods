@@ -13,10 +13,10 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.parse.APPLICATION_ID"
-            android:value="52sLQLNuBa25utidSYAg8fiS9CVv9BnpmAbMd8wW" />
+            android:value="V2Hoq32dfoXV1OsaieMAGVPnY2TxowWoI4n0Xn6c" />
         <meta-data
             android:name="com.parse.CLIENT_KEY"
-            android:value="RJhikv9SXaM6iHQZdDFBJVTD3QzFs3q7bXARwQNO" />
+            android:value="QywhvWsPeP9dIHQ6hNiohZqbkSSCh51lUnwMbern" />
 
         <activity android:name=".HomeActivity">
             <intent-filter>
@@ -27,7 +27,7 @@
         </activity>
         <activity android:name=".DiningHoursActivity" />
         <activity android:name=".PubHoursActivity" />
-        <activity android:name=".DiningMenuActivity"></activity>
+        <activity android:name=".DiningMenuActivity" />
     </application>
 
 </manifest>

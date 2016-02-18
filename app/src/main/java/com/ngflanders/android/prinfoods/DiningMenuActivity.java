@@ -47,14 +47,16 @@ public class DiningMenuActivity extends AppCompatActivity {
             public void done(List<ParseObject> objects, ParseException e) {
                 Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
                 if (e == null) {
-                    objects.clear();
+                    //objects.clear();
                     for (ParseObject item : objects) {
+                        Toast.makeText(getApplicationContext(), "4", Toast.LENGTH_SHORT).show();
                         String s = item.getString("dish");
                         menu.add(s);
                     }
                     ((ArrayAdapter<String>) listView.getAdapter()).notifyDataSetChanged();
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
+                    Toast.makeText(getApplicationContext(), "1000", Toast.LENGTH_LONG).show();
                 }
             }
         });
