@@ -1,5 +1,6 @@
 package com.ngflanders.android.prinfoods;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,8 +18,12 @@ import java.util.List;
 
 public class DiningMenuActivity extends AppCompatActivity {
 
+    static final String EXTRA_MEAL = "com.example.EXTRA_MEAL";
+    static final String EXTRA_DATE = "com.example.EXTRA_DATE";
+
     ListView listView;
     ArrayList<String> menu;
+    String meal, date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +37,11 @@ public class DiningMenuActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
-        updateMenu();
 
+        Intent intent = getIntent();
+        meal = intent.getStringExtra(EXTRA_MEAL);
+        date = intent.getStringExtra(EXTRA_DATE);
+        updateMenu();
 
     }
 
@@ -41,6 +49,9 @@ public class DiningMenuActivity extends AppCompatActivity {
 
         Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Menu");
+        query.whereEqualTo("meal", meal);
+        Toast.makeText(this, date, Toast.LENGTH_SHORT);
+        query.whereEqualTo("date", date);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override

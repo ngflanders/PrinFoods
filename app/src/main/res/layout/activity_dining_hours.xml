@@ -48,31 +48,33 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/imageButton"
+            android:id="@+id/BreakfastButton"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal"
-            android:onClick="launchDiningMenuActivity" />
+            android:onClick="onButtonClick" />
 
         <Button
             android:text="Lunch&#10;'Times'"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/imageButton2"
+            android:id="@+id/LunchButton"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="onButtonClick" />
 
         <Button
             android:text="Dinner&#10;'Times'"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/imageButton3"
+            android:id="@+id/DinnerButton"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="onButtonClick" />
 
     </LinearLayout>
 
