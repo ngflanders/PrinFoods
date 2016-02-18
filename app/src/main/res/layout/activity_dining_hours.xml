@@ -51,7 +51,8 @@
             android:id="@+id/imageButton"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="launchDiningMenuActivity" />
 
         <Button
             android:text="Lunch&#10;'Times'"

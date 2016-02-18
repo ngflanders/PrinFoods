@@ -1,7 +1,9 @@
 package com.ngflanders.android.prinfoods;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -43,5 +45,15 @@ public class DiningHoursActivity extends AppCompatActivity {
                 dateTextView.setText(isChecked ? tom : now);
             }
         });
+
+    }
+
+    public void launchDiningMenuActivity(View view) {
+        Intent intent = new Intent(this, DiningMenuActivity.class);
+        startActivity(intent);
+    }
+
+    private void updateData() {
+        
     }
 }
