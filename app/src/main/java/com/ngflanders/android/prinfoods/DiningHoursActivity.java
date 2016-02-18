@@ -99,7 +99,6 @@ public class DiningHoursActivity extends AppCompatActivity {
     private void updateTimes() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("MealTimes");
         query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_d : tom_d);
-//        query.whereEqualTo("dayOfWeek", "Thursday");
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
