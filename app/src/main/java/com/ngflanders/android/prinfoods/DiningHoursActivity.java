@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -24,6 +25,9 @@ public class DiningHoursActivity extends AppCompatActivity {
 
     static final String EXTRA_DATE = "com.example.EXTRA_DATE";
     static final String EXTRA_MEAL = "com.example.EXTRA_MEAL";
+    private Button breakfastButton;
+    private Button lunchButton;
+    private Button dinnerButton;
 
     private TextView dateTextView;
     private Switch dateSwitch;
@@ -32,9 +36,12 @@ public class DiningHoursActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining_hours);
+
+        breakfastButton = (Button) findViewById(R.id.BreakfastButton);
+        lunchButton = (Button) findViewById(R.id.LunchButton);
+        dinnerButton = (Button) findViewById(R.id.DinnerButton);
 
         dateTextView = (TextView) findViewById(R.id.dateTextView);
 
@@ -58,6 +65,7 @@ public class DiningHoursActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 dateTextView.setText(isChecked ? tom_dmd : now_dmd);
+                updateTimes();
             }
         });
 
@@ -89,28 +97,31 @@ public class DiningHoursActivity extends AppCompatActivity {
     }
 
     private void updateTimes() {
-
         ParseQuery<ParseObject> query = ParseQuery.getQuery("MealTimes");
-        //query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_d : tom_d);
-        query.whereEqualTo("dayOfWeek", "Thursday");
+        query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_d : tom_d);
+//        query.whereEqualTo("dayOfWeek", "Thursday");
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-
                 if (e == null) {
-
                     for (ParseObject item : objects) {
-
+                        switch (item.getString("meal")){
+                            case "Breakfast":
+                                breakfastButton.setText("Breakfast\n".concat(item.getString("time")));
+                                break;
+                            case "Lunch":
+                                lunchButton.setText("Lunch\n".concat(item.getString("time")));
+                                break;
+                            case "Dinner":
+                                dinnerButton.setText("Dinner\n".concat(item.getString("time")));
+                                break;
+                        }
                     }
-
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
-
                 }
             }
         });
-
     }
-
 }
