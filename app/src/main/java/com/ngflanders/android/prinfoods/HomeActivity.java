@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -18,14 +17,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        pubButton = (Button) findViewById(R.id.pubButton);
-        pubButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "pub is clicked!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
@@ -33,6 +24,13 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DiningHoursActivity.class);
         startActivity(intent);
     }
+
+    public void launchPubActivity(View view) {
+        Intent intent = new Intent(this, PubHoursActivity.class);
+        startActivity(intent);
+    }
+
+
 
 
 }
