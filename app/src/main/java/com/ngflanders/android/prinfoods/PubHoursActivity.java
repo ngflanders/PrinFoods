@@ -76,13 +76,16 @@ public class PubHoursActivity extends AppCompatActivity {
                     for (ParseObject item : objects) {
                         switch (item.getString("meal")) {
                             case "Breakfast":
-                                breakfastButton.setText("Breakfast\n".concat(item.getString("time")));
+                                breakfastButton.setText("Breakfast\n".concat(
+                                        item.getString("timeGrill")).concat(item.getString("timeShake")));
                                 break;
                             case "Lunch":
-                                lunchButton.setText("Lunch\n".concat(item.getString("time")));
+                                lunchButton.setText("Lunch\n".concat(
+                                        item.getString("timeGrill")).concat(item.getString("timeShake")));
                                 break;
                             case "Dinner":
-                                dinnerButton.setText("Dinner\n".concat(item.getString("time")));
+                                dinnerButton.setText("Dinner\n".concat(
+                                        item.getString("timeGrill")).concat(item.getString("timeShake")));
                                 break;
                         }
                     }

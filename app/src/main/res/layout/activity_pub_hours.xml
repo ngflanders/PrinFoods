@@ -23,7 +23,6 @@
             android:id="@+id/dateSwitch"
             android:thumb="@drawable/custom_date_switch_selector"
             android:track="@drawable/custom_date_switch_track"
-
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -37,6 +36,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:background="@drawable/smoothie_bitmap"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
@@ -49,7 +49,8 @@
             android:layout_weight="1"
             android:id="@+id/BreakfastButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
             android:layout_gravity="center_horizontal" />
 
         <Button
@@ -59,7 +60,8 @@
             android:layout_weight="1"
             android:id="@+id/LunchButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
             android:layout_gravity="center_horizontal" />
 
         <Button
@@ -69,7 +71,8 @@
             android:layout_weight="1"
             android:id="@+id/DinnerButton"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
