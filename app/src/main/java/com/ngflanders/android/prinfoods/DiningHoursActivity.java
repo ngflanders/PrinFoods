@@ -25,9 +25,6 @@ public class DiningHoursActivity extends AppCompatActivity {
 
     static final String EXTRA_DATE = "com.example.EXTRA_DATE";
     static final String EXTRA_MEAL = "com.example.EXTRA_MEAL";
-    private Button breakfastButton;
-    private Button lunchButton;
-    private Button dinnerButton;
 
     private TextView dateTextView;
     private Switch dateSwitch;
@@ -38,10 +35,6 @@ public class DiningHoursActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining_hours);
-
-        breakfastButton = (Button) findViewById(R.id.BreakfastButton);
-        lunchButton = (Button) findViewById(R.id.LunchButton);
-        dinnerButton = (Button) findViewById(R.id.DinnerButton);
 
         dateTextView = (TextView) findViewById(R.id.dateTextView);
 
@@ -99,7 +92,6 @@ public class DiningHoursActivity extends AppCompatActivity {
     private void updateTimes() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("MealTimes");
         query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_d : tom_d);
-//        query.whereEqualTo("dayOfWeek", "Thursday");
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -108,13 +100,13 @@ public class DiningHoursActivity extends AppCompatActivity {
                     for (ParseObject item : objects) {
                         switch (item.getString("meal")){
                             case "Breakfast":
-                                breakfastButton.setText("Breakfast\n".concat(item.getString("time")));
+                                ((Button) findViewById(R.id.BreakfastButton)).setText("Breakfast\n".concat(item.getString("time")));
                                 break;
                             case "Lunch":
-                                lunchButton.setText("Lunch\n".concat(item.getString("time")));
+                                ((Button) findViewById(R.id.LunchButton)).setText("Lunch\n".concat(item.getString("time")));
                                 break;
                             case "Dinner":
-                                dinnerButton.setText("Dinner\n".concat(item.getString("time")));
+                                ((Button) findViewById(R.id.DinnerButton)).setText("Dinner\n".concat(item.getString("time")));
                                 break;
                         }
                     }

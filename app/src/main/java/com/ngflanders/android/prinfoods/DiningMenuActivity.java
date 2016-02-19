@@ -21,9 +21,9 @@ public class DiningMenuActivity extends AppCompatActivity {
     static final String EXTRA_MEAL = "com.example.EXTRA_MEAL";
     static final String EXTRA_DATE = "com.example.EXTRA_DATE";
 
-    ListView listView;
-    ArrayList<String> menu;
-    String meal, date;
+    private ListView listView;
+    private ArrayList<String> menu;
+    private String meal, date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -24,17 +24,12 @@ public class PubHoursActivity extends AppCompatActivity {
     private TextView dateTextView;
     private Switch dateSwitch;
 
-    private Button breakfastButton;
-    private Button lunchButton;
-    private Button dinnerButton;
-
-    String today_daymonthday, tom_daymonthday, tod_day, tom_day;
+    private String today_daymonthday, tom_daymonthday, tod_day, tom_day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pub_hours);
-
 
         dateTextView = (TextView) findViewById(R.id.dateTextView);
 
@@ -61,6 +56,8 @@ public class PubHoursActivity extends AppCompatActivity {
                 updateTimes();
             }
         });
+        updateTimes();
+
     }
 
     private void updateTimes() {
@@ -74,16 +71,16 @@ public class PubHoursActivity extends AppCompatActivity {
                     for (ParseObject item : objects) {
                         switch (item.getString("meal")) {
                             case "Breakfast":
-                                breakfastButton.setText("Breakfast\n".concat(
-                                        item.getString("timeGrill")).concat(item.getString("timeShake")));
+                                ((Button) findViewById(R.id.PubBreakfastButton)).setText("Breakfast\nGrill: ".concat(item.getString("timeGrill")
+                                        + "\nShakes: ").concat(item.getString("timeShake")));
                                 break;
                             case "Lunch":
-                                lunchButton.setText("Lunch\n".concat(
-                                        item.getString("timeGrill")).concat(item.getString("timeShake")));
+                                ((Button) findViewById(R.id.PubLunchButton)).setText("Lunch\nGrill: ".concat(item.getString("timeGrill")
+                                        + "\nShakes: ").concat(item.getString("timeShake")));
                                 break;
                             case "Dinner":
-                                dinnerButton.setText("Dinner\n".concat(
-                                        item.getString("timeGrill")).concat(item.getString("timeShake")));
+                                ((Button) findViewById(R.id.PubDinnerButton)).setText("Dinner\nGrill: ".concat(item.getString("timeGrill")
+                                        + "\nShakes: ").concat(item.getString("timeShake")));
                                 break;
                         }
                     }
