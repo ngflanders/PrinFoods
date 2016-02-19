@@ -26,6 +26,7 @@ public class DiningHoursActivity extends AppCompatActivity {
     static final String EXTRA_DATE = "com.example.EXTRA_DATE";
     static final String EXTRA_MEAL = "com.example.EXTRA_MEAL";
 
+
     private TextView dateTextView;
     private Switch dateSwitch;
 
@@ -35,6 +36,7 @@ public class DiningHoursActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining_hours);
+
 
         dateTextView = (TextView) findViewById(R.id.dateTextView);
 
@@ -61,6 +63,7 @@ public class DiningHoursActivity extends AppCompatActivity {
                 updateTimes();
             }
         });
+
 
         updateTimes();
 
