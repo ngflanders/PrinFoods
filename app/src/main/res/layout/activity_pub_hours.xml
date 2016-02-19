@@ -21,6 +21,7 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:id="@+id/dateSwitch"
             android:thumb="@drawable/custom_date_switch_selector"
             android:track="@drawable/custom_date_switch_track"

@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -34,8 +33,6 @@ public class DiningMenuActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.menu_list);
         listView.setAdapter(new ArrayAdapter<>(this, R.layout.menu_item, menu));
-
-        Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
 
         Intent intent = getIntent();
         meal = intent.getStringExtra(EXTRA_MEAL);
