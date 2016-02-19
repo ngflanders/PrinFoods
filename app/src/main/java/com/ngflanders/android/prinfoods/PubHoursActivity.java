@@ -57,7 +57,6 @@ public class PubHoursActivity extends AppCompatActivity {
             }
         });
         updateTimes();
-
     }
 
     private void updateTimes() {
