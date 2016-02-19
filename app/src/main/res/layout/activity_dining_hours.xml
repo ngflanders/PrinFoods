@@ -56,6 +56,12 @@
             android:layout_gravity="center_horizontal"
             android:onClick="onButtonClick" />
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.3dp"
+            android:visibility="visible"
+            android:background="@android:color/darker_gray" />
+
         <Button
             android:text="Lunch&#10;'Times'"
             android:layout_width="match_parent"
@@ -67,6 +73,12 @@
             android:textSize="22sp"
             android:layout_gravity="center_horizontal"
             android:onClick="onButtonClick" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.3dp"
+            android:visibility="visible"
+            android:background="@android:color/darker_gray" />
 
         <Button
             android:text="Dinner&#10;'Times'"
