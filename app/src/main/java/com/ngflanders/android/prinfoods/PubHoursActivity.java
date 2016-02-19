@@ -28,7 +28,7 @@ public class PubHoursActivity extends AppCompatActivity {
     private Button lunchButton;
     private Button dinnerButton;
 
-    String now_dmd, tom_dmd, tod_d, tom_d;
+    String today_daymonthday, tom_daymonthday, tod_day, tom_day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,20 +44,20 @@ public class PubHoursActivity extends AppCompatActivity {
         final Date tomorrow = c.getTime();
 
         DateFormat dmd = new SimpleDateFormat("EEEE, MMMM dd");
-        now_dmd = dmd.format(today);
-        tom_dmd = dmd.format(tomorrow);
+        today_daymonthday = dmd.format(today);
+        tom_daymonthday = dmd.format(tomorrow);
 
         DateFormat d = new SimpleDateFormat("EEEE");
-        tod_d = d.format(today);
-        tom_d = d.format(tomorrow);
+        tod_day = d.format(today);
+        tom_day = d.format(tomorrow);
 
-        dateTextView.setText(now_dmd);
+        dateTextView.setText(today_daymonthday);
 
         dateSwitch = (Switch) findViewById(R.id.dateSwitch);
         dateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                dateTextView.setText(isChecked ? tom_dmd : now_dmd);
+                dateTextView.setText(isChecked ? tom_daymonthday : today_daymonthday);
                 updateTimes();
             }
         });
@@ -67,7 +67,7 @@ public class PubHoursActivity extends AppCompatActivity {
 
     private void updateTimes() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("PubTimes");
-        query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_d : tom_d);
+        query.whereEqualTo("dayOfWeek", !dateSwitch.isChecked() ? tod_day : tom_day);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
