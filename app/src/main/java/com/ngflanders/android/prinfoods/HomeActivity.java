@@ -29,6 +29,4 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PubHoursActivity.class);
         startActivity(intent);
     }
-
-
 }
