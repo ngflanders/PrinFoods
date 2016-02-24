@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
         Parse.initialize(this);
 
+
     }
 
     public void launchDiningActivity(View view) {
