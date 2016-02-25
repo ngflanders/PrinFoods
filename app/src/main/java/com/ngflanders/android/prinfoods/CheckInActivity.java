@@ -45,13 +45,20 @@ public class CheckInActivity extends AppCompatActivity {
 
     @SuppressWarnings("unchecked")
     private void updateFriends() {
-        map.put("name", "Nick");
-        map.put("time", "03:34 PM");
-        map.put("place", "Pub");
-
-
         ParseQuery<ParseObject> query = ParseQuery.getQuery("CheckIn"); // gets Menu table
 
+        Date midnight = new Date();
+        midnight.setHours(0);
+        midnight.setMinutes(0);
+        midnight.setSeconds(0);
+
+        Date elevenfiftynine = new Date();
+        elevenfiftynine.setHours(23);
+        elevenfiftynine.setMinutes(59);
+        elevenfiftynine.setSeconds(59);
+
+        query.whereGreaterThan("updatedAt", midnight);
+        query.whereLessThan("updatedAt", elevenfiftynine);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -68,12 +75,10 @@ public class CheckInActivity extends AppCompatActivity {
 
                         s = item.getString("place");
                         map.put("place", s);
-                        d = item.getCreatedAt();
+
+                        d = item.getUpdatedAt();
                         s = df.format(d);
-                        //s = item.getString("time");
-
                         map.put("time", s);
-
 
                         friends_feed.add(map);
                     }
