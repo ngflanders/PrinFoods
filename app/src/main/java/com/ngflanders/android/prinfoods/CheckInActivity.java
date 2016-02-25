@@ -3,6 +3,7 @@ package com.ngflanders.android.prinfoods;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -90,6 +91,30 @@ public class CheckInActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    public void onButtonClick(View v) {
+
+
+        switch (v.getId()) {
+            case R.id.check_in_dining:
+
+                break;
+
+            case R.id.check_in_pub:
+
+                break;
+
+            default:
+                throw new RuntimeException("Unknown button ID");
+        }
+
 
     }
+
+
+
+
+
 }

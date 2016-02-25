@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PrinFoods</string>
+    <string name="app_name">PrinFood</string>
     <string name="dining_room">Dining Room</string>
     <string name="pub">Pub</string>
     <string name="breakfast">Breakfast</string>
@@ -7,4 +7,6 @@
     <string name="dinner">Dinner</string>
     <string name="facebook_app_id">810100945766387</string>
     <string name="check_in">Check In</string>
+    <string name="check_in_dining">Check in Dining</string>
+    <string name="check_in_pub">Check in Pub</string>
 </resources>
