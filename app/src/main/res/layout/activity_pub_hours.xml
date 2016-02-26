@@ -54,6 +54,24 @@
                 android:src="@drawable/pub_eggs"
                 android:scaleType="centerCrop" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/breakfast"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:id="@+id/breakfastTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pub_breakfast_times_textview"
+                android:text="@string/couldnt_find_time"
+                android:textSize="25sp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:layout_below="@id/breakfastTextView" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -74,6 +92,24 @@
                 android:src="@drawable/pub_smoothie"
                 android:scaleType="centerCrop" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lunch"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:id="@+id/lunchTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pub_lunch_times_textview"
+                android:text="@string/couldnt_find_time"
+                android:textSize="25sp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:layout_below="@id/lunchTextView" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -93,6 +129,24 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/pub_burger"
                 android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dinner"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:id="@+id/dinnerTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pub_dinner_times_textview"
+                android:text="@string/couldnt_find_time"
+                android:textSize="25sp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:layout_below="@id/dinnerTextView" />
 
             <Button
                 android:layout_width="match_parent"

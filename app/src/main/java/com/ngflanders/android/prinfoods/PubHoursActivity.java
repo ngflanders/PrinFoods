@@ -3,7 +3,6 @@ package com.ngflanders.android.prinfoods;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -70,16 +69,19 @@ public class PubHoursActivity extends AppCompatActivity {
                     for (ParseObject item : objects) {
                         switch (item.getString("meal")) {
                             case "Breakfast":
-                                ((Button) findViewById(R.id.PubBreakfastButton)).setText("Breakfast\nGrill: ".concat(item.getString("timeGrill")
-                                        + "\nShakes: ").concat(item.getString("timeShake")));
+                                ((TextView) findViewById(R.id.pub_breakfast_times_textview))
+                                        .setText("Grill: ".concat(item.getString("timeGrill")
+                                                + "\nShakes: ").concat(item.getString("timeShake")));
                                 break;
                             case "Lunch":
-                                ((Button) findViewById(R.id.PubLunchButton)).setText("Lunch\nGrill: ".concat(item.getString("timeGrill")
-                                        + "\nShakes: ").concat(item.getString("timeShake")));
+                                ((TextView) findViewById(R.id.pub_lunch_times_textview))
+                                        .setText("Grill: ".concat(item.getString("timeGrill")
+                                                + "\nShakes: ").concat(item.getString("timeShake")));
                                 break;
                             case "Dinner":
-                                ((Button) findViewById(R.id.PubDinnerButton)).setText("Dinner\nGrill: ".concat(item.getString("timeGrill")
-                                        + "\nShakes: ").concat(item.getString("timeShake")));
+                                ((TextView) findViewById(R.id.pub_dinner_times_textview))
+                                        .setText("Grill: ".concat(item.getString("timeGrill")
+                                                + "\nShakes: ").concat(item.getString("timeShake")));
                                 break;
                         }
                     }
@@ -88,7 +90,5 @@ public class PubHoursActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
 }
