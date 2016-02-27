@@ -46,6 +46,7 @@ public class CheckInActivity extends AppCompatActivity {
 
     @SuppressWarnings("unchecked")
     private void updateFriends() {
+        friends_feed.clear();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("CheckIn"); // gets Menu table
 
         // TODO replace deprecated methods
@@ -99,6 +100,7 @@ public class CheckInActivity extends AppCompatActivity {
 
         final ParseObject parseObj = new ParseObject("CheckIn");
         // TODO find out how what data iOS needs, so we can upload that too
+        // TODO check if already in database, and replace if so
         switch (v.getId()) {
             case R.id.check_in_dining:
 
@@ -131,6 +133,8 @@ public class CheckInActivity extends AppCompatActivity {
                 throw new RuntimeException("Unknown button ID");
 
         }
+
+
         updateFriends();
 
     }

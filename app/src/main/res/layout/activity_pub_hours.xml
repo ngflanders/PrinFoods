@@ -59,7 +59,7 @@
                 android:text="@string/breakfast"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
-                android:id="@+id/breakfastTextView" />
+                android:id="@+id/pubBreakfastTextView" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
                 android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:layout_below="@id/breakfastTextView" />
+                android:layout_below="@id/pubBreakfastTextView" />
 
             <Button
                 android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                 android:text="@string/lunch"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
-                android:id="@+id/lunchTextView" />
+                android:id="@+id/pubLunchTextView" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
                 android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:layout_below="@id/lunchTextView" />
+                android:layout_below="@id/pubLunchTextView" />
 
             <Button
                 android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                 android:text="@string/dinner"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
-                android:id="@+id/dinnerTextView" />
+                android:id="@+id/pubDinnerTextView" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                 android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:layout_below="@id/dinnerTextView" />
+                android:layout_below="@id/pubDinnerTextView" />
 
             <Button
                 android:layout_width="match_parent"

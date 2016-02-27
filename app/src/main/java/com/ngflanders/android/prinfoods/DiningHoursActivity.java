@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -103,13 +102,13 @@ public class DiningHoursActivity extends AppCompatActivity {
                     for (ParseObject item : objects) {
                         switch (item.getString("meal")){
                             case "Breakfast":
-                                ((Button) findViewById(R.id.BreakfastButton)).setText("Breakfast\n".concat(item.getString("time")));
+                                ((TextView) findViewById(R.id.diningBreakfastTimesTextView)).setText(item.getString("time"));
                                 break;
                             case "Lunch":
-                                ((Button) findViewById(R.id.LunchButton)).setText("Lunch\n".concat(item.getString("time")));
+                                ((TextView) findViewById(R.id.diningLunchTimesTextView)).setText(item.getString("time"));
                                 break;
                             case "Dinner":
-                                ((Button) findViewById(R.id.DinnerButton)).setText("Dinner\n".concat(item.getString("time")));
+                                ((TextView) findViewById(R.id.diningDinnerTimesTextView)).setText(item.getString("time"));
                                 break;
                         }
                     }

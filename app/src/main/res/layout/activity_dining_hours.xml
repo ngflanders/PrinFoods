@@ -48,17 +48,38 @@
         android:layout_weight="5"
         android:orientation="vertical">
 
-        <Button
-            android:text="Breakfast&#10;'Times'"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/BreakfastButton"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onButtonClick" />
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/breakfast"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:id="@+id/diningBreakfastTextView" />
+
+
+            <TextView
+                android:id="@+id/diningBreakfastTimesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/times"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:layout_below="@+id/diningBreakfastTextView" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/BreakfastButton"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onButtonClick" />
+
+        </RelativeLayout>
 
         <View
             android:layout_width="fill_parent"
@@ -66,17 +87,38 @@
             android:visibility="visible"
             android:background="@android:color/darker_gray" />
 
-        <Button
-            android:text="Lunch&#10;'Times'"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/LunchButton"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onButtonClick" />
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lunch"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:id="@+id/diningLunchTextView" />
+
+            <TextView
+                android:id="@+id/diningLunchTimesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/times"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:layout_below="@+id/diningLunchTextView" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/LunchButton"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onButtonClick" />
+
+        </RelativeLayout>
 
         <View
             android:layout_width="fill_parent"
@@ -84,17 +126,37 @@
             android:visibility="visible"
             android:background="@android:color/darker_gray" />
 
-        <Button
-            android:text="Dinner&#10;'Times'"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/DinnerButton"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onButtonClick" />
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dinner"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:id="@+id/diningDinnerTextView" />
+
+            <TextView
+                android:id="@+id/diningDinnerTimesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/times"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:layout_below="@+id/diningDinnerTextView" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/DinnerButton"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onButtonClick" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
