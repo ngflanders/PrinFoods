@@ -35,8 +35,6 @@ public class CheckInActivity extends AppCompatActivity {
         friends_feed = new ArrayList<>();
         map = new HashMap<>();
 
-
-
         listView = (ListView) findViewById(R.id.checkin_list);
         SimpleAdapter adapter = new SimpleAdapter(this, friends_feed, R.layout.friend_item,
                 new String[]{"name", "time", "place"},
@@ -50,6 +48,7 @@ public class CheckInActivity extends AppCompatActivity {
     private void updateFriends() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("CheckIn"); // gets Menu table
 
+        // TODO replace deprecated methods
         Date midnight = new Date();
         midnight.setHours(0);
         midnight.setMinutes(0);
@@ -99,7 +98,7 @@ public class CheckInActivity extends AppCompatActivity {
     public void onButtonClick(View v) {
 
         final ParseObject parseObj = new ParseObject("CheckIn");
-
+        // TODO find out how what data iOS needs, so we can upload that too
         switch (v.getId()) {
             case R.id.check_in_dining:
 
@@ -132,29 +131,8 @@ public class CheckInActivity extends AppCompatActivity {
                 throw new RuntimeException("Unknown button ID");
 
         }
-
-        listView.invalidateViews();
-        ((SimpleAdapter) listView.getAdapter()).notifyDataSetChanged();
-
-
-//        switch (v.getId()) {
-//            case R.id.check_in_dining:
-//                Profile.getCurrentProfile().getFirstName();
-//                break;
-//
-//            case R.id.check_in_pub:
-//
-//                break;
-//
-//            default:
-//                throw new RuntimeException("Unknown button ID");
-//        }
-
+        updateFriends();
 
     }
-
-
-
-
 
 }

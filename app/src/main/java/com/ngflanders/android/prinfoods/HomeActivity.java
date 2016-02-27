@@ -17,11 +17,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         Parse.enableLocalDatastore(this);
         Parse.initialize(this);
-
-
     }
 
 
@@ -40,8 +37,4 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void launchFBActivity() {
-        Intent intent = new Intent(this, FBActivity.class);
-        startActivity(intent);
-    }
 }

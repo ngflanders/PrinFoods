@@ -52,7 +52,6 @@
         android:layout_height="wrap_content"
         android:text="@string/check_in"
         android:onClick="launchCheckInActivity"
-        android:background="@color/lightBlue"
-        />
+        android:background="@color/lightBlue" />
 
 </LinearLayout>
