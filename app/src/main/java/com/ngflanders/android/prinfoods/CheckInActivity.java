@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.facebook.Profile;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -96,19 +98,57 @@ public class CheckInActivity extends AppCompatActivity {
 
     public void onButtonClick(View v) {
 
+        final ParseObject parseObj = new ParseObject("CheckIn");
 
         switch (v.getId()) {
             case R.id.check_in_dining:
 
+                parseObj.saveInBackground(new SaveCallback() {
+                    public void done(ParseException e) {
+                        //parseObj.put("time", "11:11 PM");
+
+                        parseObj.put("name", Profile.getCurrentProfile().getFirstName() + " " +
+                                Profile.getCurrentProfile().getLastName());
+                        parseObj.put("place", "Dining");
+                        parseObj.saveInBackground();
+                    }
+                });
                 break;
 
             case R.id.check_in_pub:
+                parseObj.saveInBackground(new SaveCallback() {
+                    public void done(ParseException e) {
+                        //parseObj.put("time", "11:12 PM");
 
+                        parseObj.put("name", Profile.getCurrentProfile().getFirstName() + " " +
+                                Profile.getCurrentProfile().getLastName());
+                        parseObj.put("place", "Pub");
+                        parseObj.saveInBackground();
+                    }
+                });
                 break;
 
             default:
                 throw new RuntimeException("Unknown button ID");
+
         }
+
+        listView.invalidateViews();
+        ((SimpleAdapter) listView.getAdapter()).notifyDataSetChanged();
+
+
+//        switch (v.getId()) {
+//            case R.id.check_in_dining:
+//                Profile.getCurrentProfile().getFirstName();
+//                break;
+//
+//            case R.id.check_in_pub:
+//
+//                break;
+//
+//            default:
+//                throw new RuntimeException("Unknown button ID");
+//        }
 
 
     }

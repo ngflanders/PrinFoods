@@ -30,14 +30,16 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:text="@string/check_in_dining" />
+            android:text="@string/check_in_dining"
+            android:onClick="onButtonClick" />
 
         <Button
             android:id="@+id/check_in_pub"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:text="@string/check_in_pub" />
+            android:text="@string/check_in_pub"
+            android:onClick="onButtonClick" />
 
     </LinearLayout>
 

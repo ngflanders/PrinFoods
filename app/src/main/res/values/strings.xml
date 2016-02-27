@@ -9,5 +9,7 @@
     <string name="check_in">Check In</string>
     <string name="check_in_dining">Check in Dining</string>
     <string name="check_in_pub">Check in Pub</string>
-    <string name="couldnt_find_time">Couldn't Find Times</string>
+    <string name="couldnt_find_time">Couldn\'t Find Times</string>
+    <string name="login_cancel">Login Attempt Canceled</string>
+    <string name="login_error">Login attempt failed.</string>
 </resources>

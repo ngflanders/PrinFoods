@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.facebook.AccessToken;
 import com.parse.Parse;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private AccessToken accessToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+
     public void launchDiningActivity(View view) {
         Intent intent = new Intent(this, DiningHoursActivity.class);
         startActivity(intent);
@@ -33,6 +37,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void launchCheckInActivity(View view) {
         Intent intent = new Intent(this, CheckInActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchFBActivity() {
+        Intent intent = new Intent(this, FBActivity.class);
         startActivity(intent);
     }
 }
