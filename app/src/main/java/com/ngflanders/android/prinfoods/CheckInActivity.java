@@ -9,10 +9,10 @@ import android.widget.SimpleAdapter;
 
 import com.facebook.Profile;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.SaveCallback;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -97,34 +97,60 @@ public class CheckInActivity extends AppCompatActivity {
 
 
     public void onButtonClick(View v) {
+        final Profile curProf = Profile.getCurrentProfile();
+
+        final Date d = new Date();
+        final DateFormat df = new SimpleDateFormat("hh:mm a");
+
+
+        final ParseQuery<ParseObject> query = ParseQuery.getQuery("CheckIn"); // gets Menu table
+
+        query.whereEqualTo("name", curProf.getFirstName() + " " + curProf.getLastName());
 
         final ParseObject parseObj = new ParseObject("CheckIn");
+
+
         // TODO find out how what data iOS needs, so we can upload that too
-        // TODO check if already in database, and replace if so
+
         switch (v.getId()) {
             case R.id.check_in_dining:
 
-                parseObj.saveInBackground(new SaveCallback() {
-                    public void done(ParseException e) {
-                        //parseObj.put("time", "11:11 PM");
+                query.getFirstInBackground(new GetCallback<ParseObject>() {
+                    @Override
+                    public void done(ParseObject object, ParseException e) {
 
-                        parseObj.put("name", Profile.getCurrentProfile().getFirstName() + " " +
-                                Profile.getCurrentProfile().getLastName());
-                        parseObj.put("place", "Dining");
-                        parseObj.saveInBackground();
+                        if (object != null) {
+
+                            object.put("name", curProf.getFirstName() + " " + curProf.getLastName());
+                            object.put("place", "Dining");
+                            object.put("time", df.format(d));
+                            object.saveInBackground();
+                        } else {
+                            parseObj.put("name", curProf.getFirstName() + " " + curProf.getLastName());
+                            parseObj.put("place", "Dining");
+                            parseObj.put("time", df.format(d));
+                            parseObj.saveInBackground();
+                        }
                     }
                 });
                 break;
 
             case R.id.check_in_pub:
-                parseObj.saveInBackground(new SaveCallback() {
-                    public void done(ParseException e) {
-                        //parseObj.put("time", "11:12 PM");
 
-                        parseObj.put("name", Profile.getCurrentProfile().getFirstName() + " " +
-                                Profile.getCurrentProfile().getLastName());
-                        parseObj.put("place", "Pub");
-                        parseObj.saveInBackground();
+                query.getFirstInBackground(new GetCallback<ParseObject>() {
+                    @Override
+                    public void done(ParseObject object, ParseException e) {
+                        if (object != null) {
+                            object.put("name", curProf.getFirstName() + " " + curProf.getLastName());
+                            object.put("place", "Pub");
+                            object.put("time", df.format(d));
+                            object.saveInBackground();
+                        } else {
+                            parseObj.put("name", curProf.getFirstName() + " " + curProf.getLastName());
+                            parseObj.put("place", "Pub");
+                            parseObj.put("time", df.format(d));
+                            parseObj.saveInBackground();
+                        }
                     }
                 });
                 break;

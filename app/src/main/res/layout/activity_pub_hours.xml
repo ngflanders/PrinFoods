@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Large Text"
+            android:text="Date"
             android:id="@+id/dateTextView"
             android:layout_gravity="center_horizontal" />
 
@@ -57,9 +57,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/breakfast"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="italic"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
-                android:id="@+id/pubBreakfastTextView" />
+                android:id="@+id/pubBreakfastTextView"
+                android:layout_marginLeft="@dimen/text_left_margin"
+
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +74,8 @@
                 android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:layout_below="@id/pubBreakfastTextView" />
+                android:layout_below="@id/pubBreakfastTextView"
+                android:layout_marginLeft="@dimen/text_left_margin" />
 
             <Button
                 android:layout_width="match_parent"
@@ -95,9 +101,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lunch"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="italic"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
-                android:id="@+id/pubLunchTextView" />
+                android:id="@+id/pubLunchTextView"
+                android:layout_marginLeft="@dimen/text_left_margin" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,7 +116,8 @@
                 android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:layout_below="@id/pubLunchTextView" />
+                android:layout_below="@id/pubLunchTextView"
+                android:layout_marginLeft="@dimen/text_left_margin" />
 
             <Button
                 android:layout_width="match_parent"
@@ -133,9 +143,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dinner"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="italic"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
-                android:id="@+id/pubDinnerTextView" />
+                android:id="@+id/pubDinnerTextView"
+                android:layout_marginLeft="@dimen/text_left_margin" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,7 +158,8 @@
                 android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:layout_below="@id/pubDinnerTextView" />
+                android:layout_below="@id/pubDinnerTextView"
+                android:layout_marginLeft="@dimen/text_left_margin" />
 
             <Button
                 android:layout_width="match_parent"
