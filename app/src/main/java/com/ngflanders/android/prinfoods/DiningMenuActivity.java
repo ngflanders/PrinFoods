@@ -57,7 +57,6 @@ public class DiningMenuActivity extends AppCompatActivity {
                         String s = item.getString("dish");
                         menu.add(s);
                     }
-
                     ((ArrayAdapter<String>) listView.getAdapter()).notifyDataSetChanged();
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());

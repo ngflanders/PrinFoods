@@ -44,7 +44,7 @@ public class DiningHoursActivity extends AppCompatActivity {
         c.add(Calendar.DAY_OF_YEAR, 1);
         final Date tomorrow = c.getTime();
 
-        DateFormat dmd = new SimpleDateFormat("EEEE, MMMM dd");
+        DateFormat dmd = new SimpleDateFormat("EEEE, MMMM d");
         now_dmd = dmd.format(today);
         tom_dmd = dmd.format(tomorrow);
 

@@ -11,19 +11,22 @@
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:hint="Nick Flanders"
-        android:gravity="left" />
+        android:gravity="left"
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/friend_loc"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:hint="Dining" />
+        android:hint="Dining"
+        android:textColor="@color/lightBlue" />
 
     <TextView
         android:id="@+id/friend_time"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:hint="03:38 PM" />
+        android:hint="03:38 PM"
+        android:textColor="@color/colorPrimaryDark" />
 </LinearLayout>

@@ -69,7 +69,7 @@ public class CheckInActivity extends AppCompatActivity {
                 if (e == null) {
                     String s;
                     Date d;
-                    DateFormat df = new SimpleDateFormat("HH:mm");
+                    DateFormat df = new SimpleDateFormat("hh:mm a");
                     for (ParseObject item : objects) {
                         map = new HashMap<>();
 
