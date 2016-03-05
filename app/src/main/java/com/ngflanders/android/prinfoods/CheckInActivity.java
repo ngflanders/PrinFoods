@@ -102,6 +102,8 @@ public class CheckInActivity extends AppCompatActivity {
         final Date d = new Date();
         final DateFormat df = new SimpleDateFormat("hh:mm a");
 
+        final DateFormat dmd = new SimpleDateFormat("EEEE, MMMM d");
+
 
         final ParseQuery<ParseObject> query = ParseQuery.getQuery("CheckIn"); // gets Menu table
 
@@ -109,8 +111,6 @@ public class CheckInActivity extends AppCompatActivity {
 
         final ParseObject parseObj = new ParseObject("CheckIn");
 
-
-        // TODO find out how what data iOS needs, so we can upload that too
 
         switch (v.getId()) {
             case R.id.check_in_dining:
@@ -124,11 +124,13 @@ public class CheckInActivity extends AppCompatActivity {
                             object.put("name", curProf.getFirstName() + " " + curProf.getLastName());
                             object.put("place", "Dining");
                             object.put("time", df.format(d));
+                            object.put("date", dmd.format(d));
                             object.saveInBackground();
                         } else {
                             parseObj.put("name", curProf.getFirstName() + " " + curProf.getLastName());
                             parseObj.put("place", "Dining");
                             parseObj.put("time", df.format(d));
+                            parseObj.put("date", dmd.format(d));
                             parseObj.saveInBackground();
                         }
                     }
@@ -144,11 +146,13 @@ public class CheckInActivity extends AppCompatActivity {
                             object.put("name", curProf.getFirstName() + " " + curProf.getLastName());
                             object.put("place", "Pub");
                             object.put("time", df.format(d));
+                            object.put("date", dmd.format(d));
                             object.saveInBackground();
                         } else {
                             parseObj.put("name", curProf.getFirstName() + " " + curProf.getLastName());
                             parseObj.put("place", "Pub");
                             parseObj.put("time", df.format(d));
+                            parseObj.put("date", dmd.format(d));
                             parseObj.saveInBackground();
                         }
                     }

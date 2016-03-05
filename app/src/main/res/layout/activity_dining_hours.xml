@@ -58,8 +58,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/breakfast"
                 android:textColor="@android:color/white"
-                android:textSize="22sp"
-                android:id="@+id/diningBreakfastTextView" />
+                android:id="@+id/diningBreakfastTextView"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="italic"
+                android:textSize="30sp"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:background="@drawable/text_bg"
+                android:padding="5dp" />
 
 
             <TextView
@@ -69,7 +74,10 @@
                 android:text="@string/times"
                 android:textColor="@android:color/white"
                 android:textSize="22sp"
-                android:layout_below="@+id/diningBreakfastTextView" />
+                android:layout_below="@+id/diningBreakfastTextView"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:background="@drawable/text_bg"
+                android:padding="5dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -97,8 +105,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lunch"
                 android:textColor="@android:color/white"
-                android:textSize="22sp"
-                android:id="@+id/diningLunchTextView" />
+                android:id="@+id/diningLunchTextView"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="italic"
+                android:textSize="30sp"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:background="@drawable/text_bg"
+                android:padding="5dp" />
 
             <TextView
                 android:id="@+id/diningLunchTimesTextView"
@@ -107,7 +120,10 @@
                 android:text="@string/times"
                 android:textColor="@android:color/white"
                 android:textSize="22sp"
-                android:layout_below="@+id/diningLunchTextView" />
+                android:layout_below="@+id/diningLunchTextView"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:background="@drawable/text_bg"
+                android:padding="5dp" />
 
 
             <Button
@@ -136,8 +152,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dinner"
                 android:textColor="@android:color/white"
-                android:textSize="22sp"
-                android:id="@+id/diningDinnerTextView" />
+                android:id="@+id/diningDinnerTextView"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="italic"
+                android:textSize="30sp"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:background="@drawable/text_bg"
+                android:padding="5dp" />
 
             <TextView
                 android:id="@+id/diningDinnerTimesTextView"
@@ -146,7 +167,10 @@
                 android:text="@string/times"
                 android:textColor="@android:color/white"
                 android:textSize="22sp"
-                android:layout_below="@+id/diningDinnerTextView" />
+                android:layout_below="@+id/diningDinnerTextView"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:background="@drawable/text_bg"
+                android:padding="5dp" />
 
             <Button
                 android:layout_width="match_parent"
