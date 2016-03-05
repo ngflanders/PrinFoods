@@ -25,17 +25,16 @@ public class DiningHoursActivity extends AppCompatActivity {
     static final String EXTRA_DATE = "com.example.EXTRA_DATE";
     static final String EXTRA_MEAL = "com.example.EXTRA_MEAL";
 
-
     private TextView dateTextView;
     private Switch dateSwitch;
 
+    // dmd = day-month-day   d = day
     String now_dmd, tom_dmd, tod_d, tom_d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining_hours);
-
 
         dateTextView = (TextView) findViewById(R.id.dateTextView);
 
@@ -58,14 +57,11 @@ public class DiningHoursActivity extends AppCompatActivity {
         dateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                dateTextView.setText(isChecked ? tom_dmd : now_dmd);
+                dateTextView.setText(!isChecked ? now_dmd : tom_dmd);
                 updateTimes();
             }
         });
-
-
         updateTimes();
-
     }
 
 
@@ -85,11 +81,10 @@ public class DiningHoursActivity extends AppCompatActivity {
             default:
                 throw new RuntimeException("Unknown button ID");
         }
-
         intent.putExtra(EXTRA_DATE, !dateSwitch.isChecked() ? now_dmd : tom_dmd);
         startActivity(intent);
-
     }
+
 
     private void updateTimes() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("MealTimes");

@@ -38,7 +38,6 @@ public class DiningMenuActivity extends AppCompatActivity {
         meal = intent.getStringExtra(EXTRA_MEAL);
         date = intent.getStringExtra(EXTRA_DATE);
         updateMenu();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -54,8 +53,7 @@ public class DiningMenuActivity extends AppCompatActivity {
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {
                     for (ParseObject item : objects) {
-                        String s = item.getString("dish");
-                        menu.add(s);
+                        menu.add(item.getString("dish"));
                     }
                     ((ArrayAdapter<String>) listView.getAdapter()).notifyDataSetChanged();
                 } else {
@@ -63,6 +61,5 @@ public class DiningMenuActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

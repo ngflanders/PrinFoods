@@ -23,7 +23,8 @@ public class PubHoursActivity extends AppCompatActivity {
     private TextView dateTextView;
     private Switch dateSwitch;
 
-    private String today_daymonthday, tom_daymonthday, tod_day, tom_day;
+    // dmd = day-month-day
+    private String today_dmd, tom_dmd, tod_day, tom_day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +39,20 @@ public class PubHoursActivity extends AppCompatActivity {
         final Date tomorrow = c.getTime();
 
         DateFormat dmd = new SimpleDateFormat("EEEE, MMMM dd");
-        today_daymonthday = dmd.format(today);
-        tom_daymonthday = dmd.format(tomorrow);
+        today_dmd = dmd.format(today);
+        tom_dmd = dmd.format(tomorrow);
 
         DateFormat d = new SimpleDateFormat("EEEE");
         tod_day = d.format(today);
         tom_day = d.format(tomorrow);
 
-        dateTextView.setText(today_daymonthday);
+        dateTextView.setText(today_dmd);
 
         dateSwitch = (Switch) findViewById(R.id.dateSwitch);
         dateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                dateTextView.setText(isChecked ? tom_daymonthday : today_daymonthday);
+                dateTextView.setText(!isChecked ? today_dmd : tom_dmd);
                 updateTimes();
             }
         });
