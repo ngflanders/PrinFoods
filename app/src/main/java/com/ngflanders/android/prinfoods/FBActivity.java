@@ -37,9 +37,7 @@ public class FBActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                // TODO clean up this string, add to strings.xml
-                fbinfo.setText("User ID: " + loginResult.getAccessToken().getUserId() +
-                        "\nAuth Token: " + loginResult.getAccessToken().getToken());
+                fbinfo.setText("Loading...");
                 launchHomeActivity();
 
 // TODO is this a better way to log in and get user info?
@@ -61,7 +59,6 @@ public class FBActivity extends AppCompatActivity {
 //
 //                launchHomeActivity();
             }
-
 
             @Override
             public void onCancel() {
@@ -85,6 +82,7 @@ public class FBActivity extends AppCompatActivity {
     public void launchHomeActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
+        // finish();
     }
 
     public boolean isLoggedIn() {
