@@ -24,6 +24,10 @@
             android:id="@+id/dateSwitch"
             android:thumb="@drawable/custom_date_switch_selector"
             android:track="@drawable/custom_date_switch_track"
+            android:textOn="  Tomorrow  "
+            android:textOff="Today"
+            android:showText="true"
+            android:padding="5dp"
             android:layout_gravity="center_horizontal" />
 
         <TextView

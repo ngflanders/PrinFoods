@@ -83,8 +83,20 @@ public class CheckInActivity extends AppCompatActivity {
                 } else {
                     Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
                 }
+                if (objects.isEmpty()) {
+                    map = new HashMap<>();
+                    map.put("name", "No one seems to be here...");
+                    //map.put("name", "You're all alone... :'(");
+                    //map.put("name", "You're the only one here...");
+                    map.put("time", " ");
+                    map.put("place", " ");
+                    friends_feed.add(map);
+                    ((SimpleAdapter) listView.getAdapter()).notifyDataSetChanged();
+                }
             }
         });
+
+
     }
 
 
