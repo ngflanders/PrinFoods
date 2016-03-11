@@ -62,7 +62,7 @@ public class CheckInActivity extends AppCompatActivity {
         elevenfiftynine.setHours(23);
         elevenfiftynine.setMinutes(59);
         elevenfiftynine.setSeconds(59);
-
+//sfkjsdlfkjsd
         query.whereGreaterThan("updatedAt", midnight);
         query.whereLessThan("updatedAt", elevenfiftynine);
 
