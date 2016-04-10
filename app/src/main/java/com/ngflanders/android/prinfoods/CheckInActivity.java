@@ -17,6 +17,7 @@ import com.parse.ParseQuery;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -51,6 +52,12 @@ public class CheckInActivity extends AppCompatActivity {
         // gets Menu table
         ParseQuery<ParseObject> query = ParseQuery.getQuery("CheckIn");
 
+
+        Date time = new Date();
+        Calendar ctime = Calendar.getInstance();
+        ctime.setTime(time);
+        ctime.add(Calendar.HOUR, -1);
+
         // checks if object was last updated today
         // TODO replace deprecated methods
         Date midnight = new Date();
@@ -63,8 +70,8 @@ public class CheckInActivity extends AppCompatActivity {
         elevenfiftynine.setMinutes(59);
         elevenfiftynine.setSeconds(59);
 
-        query.whereGreaterThan("updatedAt", midnight);
-        query.whereLessThan("updatedAt", elevenfiftynine);
+        query.whereGreaterThan("updatedAt", ctime);
+        // query.whereLessThan("updatedAt", elevenfiftynine);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -177,5 +184,19 @@ public class CheckInActivity extends AppCompatActivity {
                 throw new RuntimeException("Unknown button ID");
         }
         updateFriends();
+    }
+
+
+    private static boolean hoursAgo(String datetime) {
+        Calendar date = Calendar.getInstance();
+        try {
+            date.setTime(new SimpleDateFormat("MMM dd, yyyy, HH:mm").parse(datetime)); // Parse into Date object
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar now = Calendar.getInstance(); // Get time now
+        long differenceInMillis = now.getTimeInMillis() - date.getTimeInMillis();
+        long differenceInHours = (differenceInMillis) / 1000L / 60L / 60L; // Divide by millis/sec, secs/min, mins/hr
+        return ((int) differenceInHours < 2);
     }
 }
